@@ -1,0 +1,112 @@
+version: '2.4'
+services:
+  trip-nacos: # Nacos 的部署
+    container_name: trip-nacos # 配置容器名称，方便通过名称来进行网络通信
+    image: nacos/nacos-server  # 使用的镜像
+    build:
+      context: ./nacos  # 使用 Dockerfile 的上下文环境
+    environment:
+      - MODE=standalone # 配置容器的环境变量
+    volumes: # 数据卷配置
+      - ./nacos/logs/:/home/nacos/logs
+      - ./nacos/conf/application.properties:/home/nacos/conf/application.properties
+    ports:   # 暴露的端口(包括健康检测的端口)
+      - "8848:8848"
+      - "9848:9848"
+      - "9849:9849"
+    depends_on: # 依赖的服务
+      - trip-mysql
+
+  trip-mysql: # MySQL 的部署
+    container_name: trip-mysql # 配置容器名称，方便通过名称来进行网络通信
+    image: mysql:5.7           # 使用的镜像
+    build:
+      context: ./mysql # 使用 Dockerfile 的上下文环境
+    ports:   # 暴露的端口
+      - "3306:3306"
+    volumes: # 数据卷配置
+      - ./mysql/conf:/etc/mysql/conf.d
+      - ./mysql/logs:/logs
+      - ./mysql/data:/var/lib/mysql
+    command: [ # 容器启动运行的命令
+      'mysqld',
+      '--innodb-buffer-pool-size=80M',
+      '--character-set-server=utf8mb4',
+      '--collation-server=utf8mb4_unicode_ci',
+      '--default-time-zone=+8:00',
+      '--lower-case-table-names=1'
+    ]
+    environment: # 配置容器的环境变量
+      MYSQL_DATABASE: 'trip-cloud'
+      MYSQL_ROOT_PASSWORD: 'admin'
+
+  trip-redis:    # Redis 的部署
+    container_name: trip-redis # 配置容器名称，方便通过名称来进行网络通信
+    image: redis               # 使用的镜像
+    build:
+      context: ./redis # 使用 Dockerfile 的上下文环境
+    ports:   # 暴露的端口
+      - "6379:6379"
+    volumes: # 数据卷配置
+      - ./redis/conf/redis.conf:/home/trip/redis/redis.conf
+      - ./redis/data:/data
+    command: redis-server /home/trip/redis/redis.conf # 容器启动运行的命令
+
+  trip-website: # Nginx 的部署
+    container_name: trip-website # 配置容器名称，方便通过名称来进行网络通信
+    image: nginx                 # 使用的镜像
+    build:
+      context: ./website # 使用 Dockerfile 的上下文环境
+    ports:   # 暴露的端口
+      - "80:80"
+    volumes: # 数据卷配置
+      - ./website/html/dist:/home/trip/projects/trip-ui
+      - ./website/conf/nginx.conf:/etc/nginx/nginx.conf
+      - ./website/logs:/var/log/nginx
+      - ./website/conf.d:/etc/nginx/conf.d
+    depends_on: # 依赖的服务
+      - trip-gateway
+    links:      # links 关联的服务，可以使用容器的主机名进行通信
+      - trip-gateway
+
+  trip-gateway: # 网关服务
+    container_name: trip-gateway # 配置容器名称，方便通过名称来进行网络通信
+    build: # 使用 Dockerfile 的上下文环境
+      context: ./trip/gateway
+      dockerfile: dockerfile
+    ports: # 暴露的端口
+      - "9000:9000"
+    depends_on: # 依赖的服务
+      - trip-redis
+    links: # links 关联的服务，可以使用容器的主机名进行通信
+      - trip-redis
+
+  trip-user: # 用户服务
+    container_name: trip-user # 配置容器名称，方便通过名称来进行网络通信
+    build: # 使用 Dockerfile 的上下文环境
+      context: ./trip/user
+      dockerfile: dockerfile
+    ports: # 暴露的端口
+      - "9200:9200"
+    depends_on: # 依赖的服务
+      - trip-redis
+      - trip-mysql
+    links: # links 关联的服务，可以使用容器的主机名进行通信
+      - trip-redis
+      - trip-mysql
+
+  trip-article: # 文章服务
+    container_name: trip-article # 配置容器名称，方便通过名称来进行网络通信
+    build: # 使用 Dockerfile 的上下文环境
+      context: ./trip/article
+      dockerfile: dockerfile
+    ports: # 暴露的端口
+      - "8060:8060"
+    depends_on: # 依赖的服务
+      - trip-redis
+      - trip-mysql
+      - trip-user
+    links: # links 关联的服务，可以使用容器的主机名进行通信
+      - trip-redis
+      - trip-mysql
+      - trip-user

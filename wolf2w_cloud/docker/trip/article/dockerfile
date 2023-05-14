@@ -1,0 +1,15 @@
+# 基础镜像
+FROM  openjdk:8-jre
+# author
+MAINTAINER zhongzhiwei <zhongzhiwei@kubesphere.io>
+
+# 挂载目录
+VOLUME /home/trip
+# 创建目录
+RUN mkdir -p /home/trip
+# 指定路径
+WORKDIR /home/trip
+# 复制jar文件到路径
+COPY ./jar/trip-article.jar /home/trip/trip-article.jar
+# 启动文章服务
+ENTRYPOINT ["java","-jar","trip-article.jar"]

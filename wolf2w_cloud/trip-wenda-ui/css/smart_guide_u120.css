@@ -1,0 +1,384 @@
+#smartGuideFeng{
+    display:none;
+    bottom:30px;
+    position:fixed;
+    left:0px;
+    height:190px;
+    width:50px;
+    z-index:100;
+}
+#smartGuideFeng .xiaofeng-hide{
+    position:absolute;
+    bottom:0px;
+    width:50px;
+    height:131px;
+    background: url(/images/app/smart_guide/xiaofeng-hide-v2.png) no-repeat;
+}
+#smartGuideFeng div.sg-xiaofeng-hide-eye-l{
+    padding: 0px;
+    position:absolute;
+    left:0px;
+    bottom:82px;
+    width:6px;
+    height:8px;
+    background: url(/images/app/smart_guide/eye-hide-v2.png) no-repeat bottom;
+    z-index:101;
+}
+#smartGuideFeng div.sg-xiaofeng-hide-eye-r{
+    padding: 0px;
+    position:absolute;
+    left:0px;
+    bottom:38px;
+    width:6px;
+    height:8px;
+    background: url(/images/app/smart_guide/eye-hide-v2.png) no-repeat bottom;
+    z-index:101;
+}
+/*需要删掉*/
+#smartGuideFeng div.sg-xiaofeng-hide-eye-l-v3{
+    padding: 0px;
+    position:absolute;
+    left:-2px;
+    bottom:82px;
+    width:8px;
+    height:8px;
+    background: url(/images/app/smart_guide/eye-hide-v26.png) no-repeat bottom;
+    z-index:101;
+}
+#smartGuideFeng div.sg-xiaofeng-hide-eye-r-v3{
+    padding: 0px;
+    position:absolute;
+    left:-2px;
+    bottom:38px;
+    width:8px;
+    height:8px;
+    background: url(/images/app/smart_guide/eye-hide-v26.png) no-repeat bottom;
+    z-index:101;
+}
+
+
+#smartGuide{
+    position:fixed;
+    bottom:25px;
+    left:-700px;
+    height:280px;
+    width:560px;
+    z-index:101;
+    font-family:Arial,'Microsoft YaHei';
+    display:block;
+    background-color: white;
+    z-index: 100;
+    border:1px #DDDDDD solid;
+    box-shadow: 1px 3px 6px 1px #DDDDDD;
+}
+#smartGuide a{
+    text-decoration: none;
+}
+#smartGuide .menu{
+    position:absolute;
+    left: 0px;
+    height:100%;
+    width:90px;
+    z-index: 101;
+    background-color: #F9F9F9;
+    margin:0px;
+    padding:0px;
+    border:0px #D9D9D9 solid;
+    border-right-width: 1px;
+}
+#smartGuide .menu li{
+    display:list-item;list-style-type:none;height:49px;width:100%;background-color:transparent;text-align:center;
+    border:0px solid;
+    border-bottom-width: 1px;
+    border-color: #E6E6E6;
+    cursor: pointer;
+}
+#smartGuide .menu li a{
+    color:rgb(102, 102, 102);line-height:49px;text-decoration: none;cursor: pointer;font-size: 16px;font-weight: bold;
+    display: block;
+    width:100%;
+}
+#smartGuide .menu li.active{
+    display:list-item;list-style-type:none;height:49px;width:100%;background-color:#FF9D00!important;text-align:center;
+}
+#smartGuide .menu li.active a{
+    color:white;line-height:49px;text-decoration: none;
+
+}
+#smartGuide .r-container{
+    position: absolute;
+    left: 91px;
+    width: 469px;
+    height: 100%;
+}
+#smartGuide .header{
+    height: 40px;
+    position: absolute;
+    width: 100%;
+}
+#smartGuide .header .underline{
+    position: absolute;
+    bottom: 1px;
+    height: 1px;
+    width: 94%;
+    left: 3%;
+    background-color: #DDDDDD;
+}
+#smartGuide .header .title{
+    position: relative;
+    font-size: 14px;
+    font-weight: bold;
+    color:rgb(51, 51, 51);
+    float: left;
+    width: 400px;
+    padding-left: 3%;
+    line-height: 40px;
+}
+#smartGuide .header .button{
+    position: absolute;
+    right:0px;
+    top: 0px;
+    width: 69px;
+    height: 26px;
+}
+#smartGuide .header .button a.x{
+    float: right;height: 23px;width: 27px;line-height: 23px;background: url(/images/app/smart_guide/x.png) no-repeat;background-position-y: 5px;background-position-x: 7px;background-position: 7px 5px;
+}
+#smartGuide .header .button a.x:hover{
+    float: right;height: 23px;width: 27px;line-height: 23px;background: #FF9D00 url(/images/app/smart_guide/x-active.png) no-repeat;background-position-y: 5px;background-position-x: 7px;background-position: 7px 5px;
+}
+#smartGuide .header .button a.bigger{
+    float: right;height: 23px;width: 27px;line-height: 23px;background: url(/images/app/smart_guide/bigger.png) no-repeat;background-position-y: 6px;background-position-x: 7px;background-position: 7px 6px;
+}
+#smartGuide .content .banner{
+    height:119px;
+}
+#smartGuide .content .banner .underline{
+    position: absolute;
+    top: 119px;
+    height: 0px;
+    width: 94%;
+    left: 3%;
+    border: 0px #DDDDDD dotted;
+    border-bottom-width: 1px;
+}
+#smartGuide .content .banner .pro-img{
+    position: absolute;
+    left:3%;
+    top:20px;
+    height:84px;
+    width: 116px;
+}
+#smartGuide .content .banner .pro-title{
+    position: absolute;
+    left:140px;
+    top:20px;
+    height:84px;
+    width: 120px;
+    width: 310px;
+    font-size: 16px;
+    font-weight: bold;
+    word-break:break-all;
+}
+#smartGuide .content .banner .pro-title a{
+    color: rgb(51, 51, 51);
+    text-decoration: none;
+}
+#smartGuide .content .banner .pro-title a:hover{
+    color: rgb(255, 157, 0);
+    text-decoration: underline;
+}
+#smartGuide .content .banner .pro-price{
+    position: absolute;
+    top: 85px;
+    right: 4%;
+    font-size: 20px;
+    color:#FF9D00;
+    font-weight: bold;
+}
+#smartGuide .content{
+    position: absolute;
+    height: 240px;
+    width: 100%;
+    top: 40px;
+}
+#smartGuide .content .list{
+    position: relative;
+    height: 120px;
+}
+#smartGuide .content .list .item{
+    position:relative;
+    padding-left: 3%;
+    padding-right:3%;
+    padding-top:10px;
+    height:18px;
+}
+#smartGuide .content .list .item .category{
+    position:absolute;
+    left:3%;
+    top:9px;
+    height:18px;
+    width:66px;
+    padding-right:10px;
+}
+/*#smartGuide .content .list .item .category a{
+  text-decoration: none;
+}*/
+#smartGuide .content .list .item .category span{
+    font-size: 12px;
+    color: rgb(68,164,240);
+    border: 1px rgb(68,164,240) solid;
+    padding: 2px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+#smartGuide .content .list .item .category span:hover{
+    font-size: 12px;
+    color: rgb(255,255,255);
+    background-color: rgb(68,164,240);
+    border: 1px rgb(68,164,240) solid;
+    padding: 2px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+#smartGuide .content .list .item .title{
+    position: absolute;
+    left: 85px;
+    line-height: 18px;
+    width: 371px;
+    font-size:14px;
+    font-weight:bold;
+}
+#smartGuide .content .list .item .title a{
+    color:rgb(51, 51, 51);
+}
+#smartGuide .content .list .item .title a:hover{
+    color:rgb(255, 157, 0);
+    text-decoration: underline;
+}
+
+#smartGuide div#sgScroll{
+    height:120px;position: relative; overflow: hidden;
+}
+#smartGuide .scrollbar {
+    position: absolute;
+    right: 1px;
+    top: 0;
+    width: 5px;
+    height: 100px;
+    background-color: #d6d6d6;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* 增加管家 */
+
+/*#smartGuide .sg-steward{position:absolute;top:0;width:100%;height:280px;background:url(/images/app/custom-travel/steward-pop-bg.jpg) no-repeat center top;text-align:center;color:#fff;font-size:14px;line-height:18px;}*/
+/*#smartGuide .sg-steward h2{font-size:22px;font-weight:normal;margin:15px 0 5px;line-height:30px;}*/
+/*#smartGuide .sg-steward ul{margin:15px 0;}*/
+/*#smartGuide .sg-steward li{display:inline-block;*display:inline;*zoom:1;width:105px;}*/
+/*#smartGuide .sg-steward li i{display:block;margin:0 auto 6px;width:50px;height:50px;background:url(/images/app/custom-travel/steward-pop-icon.png) no-repeat 0 0;overflow:hidden;}*/
+/*#smartGuide .sg-steward li .icon-custom{background-position:0 0;}*/
+/*#smartGuide .sg-steward li .icon-experience{background-position:-50px 0;}*/
+/*#smartGuide .sg-steward li .icon-services{background-position:-100px 0;}*/
+/*#smartGuide .sg-steward .action span{font-size:12px;opacity:.5;filter:alpha(opacity=50);}*/
+/*#smartGuide .sg-steward .btn{display:inline-block;margin-bottom:5px;width:118px;height:34px;background-color:#fff;line-height:34px;font-size:16px;color:#002037;border-radius:2px;}*/
+/*#smartGuide .sg-steward a.x{*/
+    /*position:absolute;right:0;top:0;height: 23px;width: 27px;line-height: 23px;background: url(/images/app/custom-travel/steward-pop-icon.png) no-repeat -150px 0;*/
+/*}*/
+/*#smartGuide .sg-steward a.x:hover{*/
+    /*background-color: #FF9D00;*/
+/*}*/
+/*@media screen and (-webkit-min-device-pixel-ratio: 2), screen and (max-moz-device-pixel-ratio: 2){*/
+    /*#smartGuide .sg-steward li i{background:url(/images/app/custom-travel/steward-pop-icon_2x.png) no-repeat;background-size:200px;}*/
+/*}*/
+
+/* 日本定制自由行产品广告 */
+#smartGuide .slide_box{width:100%; height:100%; background:#FFF; left:0; bottom:25px; z-index: 101;}
+#smartGuide .slide_cont{width:469px; float:left; height:280px; border-left:1px solid #ddd;}
+#smartGuide .slide_cont .c-box a.close{width:27px; height:27px; background:#aaa; display:block; position:absolute; right:0; top:0; color:#FFF; text-align:center; line-height:27px; font-size:14px; z-index:5;}
+#smartGuide .slide_cont .c-box a.close:hover{background:#ff9d00;}
+#smartGuide .nub-read{background:url(/images/app/smart_guide/play_banner.jpg) no-repeat; height:172px; position:relative;}
+#smartGuide .nub-read span{border-radius:10px; padding:0 8px; background:#2c98ee; color:#FFF; display:inline-block; height:20px; line-height:22px; font-size:14px; position:absolute; right:20px; bottom:20px;}
+#smartGuide .add-about{font-size:14px; color:#000; line-height:25px; padding:12px 18px;}
+#smartGuide .add-about a{color:#2c98ee;}
+
+#smartGuide .slide_box .custom_made{background:url(/images/app/smart_guide/custom_bag.jpg) no-repeat; width:100%; height:280px; position:relative; overflow:hidden;}
+#smartGuide .custom_made input{width:273px; height:33px; line-height:33px; font-size:14px; text-align:center; color:#ff9d00; background:#FFF; border:1px solid #e5e5e5; outline:none; margin:156px auto 0; display:block;}
+#smartGuide .custom_made input:focus{border:1px solid #ff9d00;}
+#smartGuide .custom_made .sub-t a{display:block; width:122px; height:35px; text-align:center; line-height:35px; color:#FFF; background:#ff9d00; font-size:14px; border-radius:4px; margin:20px auto 0;}
+#smartGuide .custom_made .sub-t a.success{background: lightgreen;}
+#smartGuide .custom_made .sub-t a.hover{background: #ff8a00 !important;}
+#smartGuide .custom_made .sub-t a:hover,a.success:hover{background:#ff8a00;}
+
+
+/* im */
+#smartGuide .button-box{
+    position: absolute;
+    right:0px;
+    top: 0px;
+    width: 69px;
+    z-index:300;
+    height: 26px;
+}
+#smartGuide .button-box a.x{
+    float: right;height: 23px;width: 27px;line-height: 23px;background: url(/images/app/smart_guide/x.png) no-repeat;background-position-y: 5px;background-position-x: 7px;background-position: 7px 5px;
+}
+#smartGuide .button-box a.x:hover{
+    float: right;height: 23px;width: 27px;line-height: 23px;background: #FF9D00 url(/images/app/smart_guide/x-active.png) no-repeat;background-position-y: 5px;background-position-x: 7px;background-position: 7px 5px;
+}
+#smartGuide .button-box a.bigger{
+    float: right;height: 23px;width: 27px;line-height: 23px;background: url(/images/app/smart_guide/bigger.png) no-repeat;background-position-y: 6px;background-position-x: 7px;background-position: 7px 6px;
+}
+#smartGuide .button-box a.bigger:hover{
+    float: right;height: 23px;width: 27px;line-height: 23px;background: #FF9D00 url(/images/app/smart_guide/bigger-active.png) no-repeat;background-position-y: 6px;background-position-x: 7px;background-position: 7px 6px;
+}
+#smartGuide .button-box a.smaller{
+    float: right;height: 23px;width: 27px;line-height: 23px;background: url(/images/app/smart_guide/smaller.png) no-repeat;background-position-y: 5px;background-position-x: 5px;background-position: 5px 5px;
+}
+#smartGuide .button-box a.smaller:hover{
+    float: right;height: 23px;width: 27px;line-height: 23px;background: #FF9D00 url(/images/app/smart_guide/smaller-active.png) no-repeat;background-position-y: 5px;background-position-x: 5px;background-position: 5px 5px;
+}
+
+#smartGuide.max{
+    height:618px;
+    width:799px;
+}
+#smartGuide #smartGuideIm{
+    position: absolute;
+    left: 91px;
+    height: 100%;
+    display:none;
+}
+#smartGuide #smartGuideIm.max{
+    width:auto!important;
+}
+#smartGuide .menu li.notice{
+    display:list-item;list-style-type:none;height:49px;width:100%;background: transparent url(/images/app/smart_guide/noticeli.png) no-repeat;;text-align:center;
+    border:0px solid;
+    border-bottom-width: 1px;
+    border-color: #E6E6E6;
+    cursor: pointer;
+}
+#smartGuideFeng .sg-xiaofeng-hide-notice{
+    position: absolute;
+    left: 30px;
+    top: 60px;
+    height: 22px;
+    width: 22px;
+    background: #FF9D00;
+    border-radius: 50%;
+    font-size: 12px;
+    line-height: 22px;
+    text-align: center;
+    color: white;
+    display:none;
+}
+
+.text-overflow {
+    display: block;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

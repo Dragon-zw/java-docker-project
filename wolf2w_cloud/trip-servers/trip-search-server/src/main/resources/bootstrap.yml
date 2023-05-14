@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: trip-search-server
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      config:
+        namespace: aeb02305-184e-4278-bad4-06dde2a6e973 # 配置中心命名空间为开发环境
+        file-extension: yml # 配置文件格式
+        shared-configs:
+          - trip-common-elasticsearch-dev.yml # ES 配置文件
+          - trip-common-redis-dev.yml # redis 配置文件
+      discovery:
+        namespace: ${spring.cloud.nacos.config.namespace}
+  profiles:
+    active: dev # 环境标识

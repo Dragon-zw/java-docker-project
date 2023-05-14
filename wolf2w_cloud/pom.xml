@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <modules>
+        <module>trip-common</module>
+        <module>trip-api-gateway</module>
+        <module>trip-apps</module>
+        <module>trip-server-apis</module>
+        <module>trip-servers</module>
+    </modules>
+
+    <!--父工程-->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.2.RELEASE</version>
+    </parent>
+
+    <groupId>cn.wolfcode</groupId>
+    <artifactId>wolf2w_cloud</artifactId>
+    <version>1.0.0</version>
+
+    <!-- pom 类型 -->
+    <packaging>pom</packaging>
+
+    <description>统一的父项目, 管理整个项目依赖的版本信息</description>
+
+    <!--依赖版本的锁定-->
+    <properties>
+        <!-- spring boot 的配置 -->
+        <java.version>1.8</java.version>
+
+        <!-- maven 本身的配置 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
+        <spring-cloud-alibaba.version>2.2.3.RELEASE</spring-cloud-alibaba.version>
+
+        <!-- mybatis-plus 版本 -->
+        <mybatis-plus.version>3.5.2</mybatis-plus.version>
+
+        <!-- jwt 版本 -->
+        <jwt.version>0.9.1</jwt.version>
+    </properties>
+
+    <!--
+            依赖管理标签
+            在这里面配置的标签, 只是管理了版本, 子项目中必须再重新导入该依赖的 groupId/artifactId 以后才会真正使用
+         -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- 自身服务 api 的版本管理 -->
+            <dependency>
+                <artifactId>trip-user-server-api</artifactId>
+                <groupId>cn.wolfcode</groupId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>trip-travel-server-api</artifactId>
+                <groupId>cn.wolfcode</groupId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>trip-comment-server-api</artifactId>
+                <groupId>cn.wolfcode</groupId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>trip-search-server-api</artifactId>
+                <groupId>cn.wolfcode</groupId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.wolfcode</groupId>
+                <artifactId>trip-common-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.wolfcode</groupId>
+                <artifactId>trip-common-redis</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>trip-common-jwt</artifactId>
+                <groupId>cn.wolfcode</groupId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>trip-common-mongodb-starter</artifactId>
+                <groupId>cn.wolfcode</groupId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>trip-common-elasticsearch</artifactId>
+                <groupId>cn.wolfcode</groupId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <!-- Token生成与解析-->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>${jwt.version}</version>
+            </dependency>
+
+            <!-- 需要 mybatis plus 的注解 -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-annotation</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>1.1.17</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.56</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.24</version>
+                <!--
+                    1. 让 lombok 只在编译时期生成代码即可
+                    2. 阻止依赖的传递性
+                 -->
+                <scope>provided</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

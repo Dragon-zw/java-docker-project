@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: trip-api-gateway
+  cloud:
+    nacos:
+      server-addr: trip-nacos:8848
+      config:
+        namespace: aeb02305-184e-4278-bad4-06dde2a6e973 # 配置中心命名空间为开发环境
+        file-extension: yml # 配置文件格式
+        shared-configs:
+          - trip-common-redis-dev.yml # 额外依赖的共享配置文件
+          - trip-jwt-auth-dev.yml
+      discovery:
+        namespace: ${spring.cloud.nacos.config.namespace}
+  profiles:
+    active: dev # 环境标识

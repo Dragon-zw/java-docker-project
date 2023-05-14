@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>旅游问答,解决旅行问题,基于旅游的问答分享平台 - 狼行天下</title>
+    <meta name="description" content="狼行天下旅游问答是基于旅游的问答分享平台,这里聚集了各路旅行达人,只要你有旅行中的问题,在狼行天下问答问出来,总有旅行经验丰富或者居住在当地的旅行家会为你热心解答">
+    <meta name="keywords" content="狼行天下旅游问答">
+    <meta name="renderer" content="webkit">
+    <script type="text/javascript">
+        window.Env = {
+            "qa_page": "index",
+            "WWW_HOST": "localhost:12345",
+            "IMG_HOST": "localhost:12345",
+            "W_HTTP": "localhost:12345",
+            "P_HOST": "localhost:12345",
+            "P_HTTP": "localhost:12345",
+            "PAGELET_HTTP": "localhost:12345",
+            "JS_HOST": "localhost:12345",
+            "TONGJI_HOST": "localhost:12345",
+            "UID": 48455706,
+            "CSTK": "9fa8f73a91ed02b99adc212f2f3c2364_830964691c45b17e37b7d81bf4aa7fbc",
+            "GOOGLE_MAP_KEY": "AIzaSyD-Su0x_rPy1xehlMBcMyTqWkU49Bk53nQ",
+            "MOBILE_BINDED": true
+        };
+    </script>
+    <script src="/js/hm.js"></script>
+    <link href="/css/1642608184.css" rel="stylesheet" type="text/css">
+    <link href="/css/mfw-footer.css" rel="stylesheet" type="text/css">
+    <link href="/css/mfw-toolbar.css" rel="stylesheet" type="text/css">
+    <link href="/css/mfw-ask.css" rel="stylesheet" type="text/css">
+    <link href="/css/wenda/search.css" rel="stylesheet" type="text/css">
+    <script language="javascript" src="/js/1650612185.js" type="text/javascript" crossorigin="anonymous"></script>
+    <script async="" src="/js/BrowserState.js" crossorigin="anonymous"></script>
+    <script src="/js/vue.js" type="text/javascript"></script>
+</head>
+<body style="position: relative;">
+<div id="search">
+    <template>
+        <div class="topBar">
+            <header-counter></header-counter>
+        </div>
+        <input type="hidden" id="_j_param" data-type="0" data-key="" data-mddid="" data-tid="" data-more="1" data-time="">
+        <div class="wrapper wrapper-new" data-cs-t="wenda">
+            <div class="col-main">
+                <div class="i-main">
+                    <div class="crumb">
+                        <a href="/wenda/index.html">旅游问答</a>&gt;<strong>成都好玩的地方</strong>
+                    </div>
+                    <div class="search-box">
+                        <div class="search-panel" data-cs-t="wenda">
+                            <div class="clearfix _j_suggest_hd">
+                                <div class="sp-input">
+                                    <input type="text" id="_j_wenda_seach_input" value="成都好玩的地方" placeholder="提问前请先搜索，看看你的问题其他蜂蜂是否已经问过">
+                                </div>
+                                <input type="button" class="sp-button" data-mddid="0">
+                            </div>
+                            <div class="bd _j_suggest_box hide"></div>
+                        </div>
+                    </div>
+                    <div class="cate-crumb">
+                        <a href="/wenda/">全部</a>
+                        &gt;
+                        <span class="_j_question_total">成都好玩的地方(<span v-html="searchData.length"></span>)</span>
+                    </div>
+                </div>
+                <div class="newcate-wrap _j_qa_list">
+                    <div class="bd newcate-bd">
+                        <ul class="_j_pager_box">
+                            <li class="item clearfix" data-qid="11407564" v-for="(list, index) in searchData" :key="index">
+                                <div class="title"><a href="/wenda/detail.html" target="_blank">{{list.name}}</a></div>
+                                <div class="container">
+                                    <div class="avatar">
+                                        <a href="" target="_blank" class="_j_filter_click">
+                                            <img class="_j_filter_click" :src="list.userImg">
+                                        </a>
+                                    </div>
+                                    <div class="user-info"><a class="name _j_filter_click" href="" target="_blank">{{list.username}}</a></div>
+                                    <div class="desc clearfix">
+                                        <a href="/wenda/detail.html" target="_blank" style="color: #666;">
+                                            <img :src="list.img" width="150" height="100" v-if="list.img">
+                                            <p>{{list.msg}}</p>
+                                        </a>
+                                    </div>
+                                    <div class="operate">
+                                        <div class="zan"><i></i>{{list.num}}</div>
+                                        <div class="mdd"><a href="" class="_j_filter_click" target="_blank"><i class="_j_filter_click"></i>{{list.address}}</a></div>
+                                        <span class="reply">回答 ({{list.comment}})</span>
+                                        <span class="browse">浏览 ({{list.browseNum}})</span>
+                                        <span class="date">发布于{{list.time}}</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="_j_pager">
+                        <div class="ft ft_load_btn">
+                            <div class="answer-more _j_add_more_button ">
+                                <a>加载更多<i></i></a>
+                            </div>
+                        </div>
+                        <div class="ft ft_loading _j_add_loading_button hide">
+                            <div class="answer-loading">正在加载<i></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <wd-tag-counter></wd-tag-counter>
+        </div>
+        <div id="footer" style="height: 150px;">
+            <footer-counter></footer-counter>
+        </div>
+        <div class="mfw-toolbar mfw-acc-hide" id="_j_mfwtoolbar" style="display: block; position: absolute; bottom: 212px;">
+        <div class="toolbar-item-top" style="display: block;">
+            <a role="button" class="btn _j_gotop">
+                <i class="icon_top"></i>
+                <em>返回顶部</em>
+            </a>
+        </div>
+        <div class="toolbar-item-feedback">
+            <a role="button" data-japp="feedback" class="btn">
+                <i class="icon_feedback"></i>
+                <em>意见反馈</em>
+            </a>
+        </div>
+
+    </div>
+    </template>
+</div>
+<script type="module">
+    import headerCounter from '/common/header.js' // 导航栏
+    import wdTagCounter from '/common/wdTag.js' // 左侧我要提问侧边栏
+    import footerCounter from '/common/footer.js' // 底边栏
+    var app = new Vue({
+        el: '#search',
+        components: {wdTagCounter, footerCounter, headerCounter},
+        data: {
+            searchData: []
+        },
+        methods: {
+            getSearchList() {
+                $.get('/json/search_list.json').then((res) => {
+                    if (res.search.code === 0) {
+                        this.searchData = res.search.data
+                    }
+                })
+            }
+        },
+        mounted() {
+            this.getSearchList()
+            var JsEle = document.createElement('script')
+            JsEle.src = "/js/1631273808.js"
+            document.body.append(JsEle)
+        }
+    })
+</script>
+</body>
+</html>

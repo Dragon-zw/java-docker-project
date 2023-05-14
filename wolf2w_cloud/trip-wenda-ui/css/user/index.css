@@ -1,0 +1,12 @@
+.ariabodytopfiexed .topBar {
+    position: relative;
+}
+.invisible {
+    opacity: 0.01;
+    filter: alpha(opacity=1);
+}
+
+.invisible .maps-container {
+    opacity: 0.01;
+    filter: alpha(opacity=1);
+}
